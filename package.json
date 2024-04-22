@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src\\app.js",
-    "typeorm": "node_modules\\.bin\\typeorm"
+    "typeorm": "node_modules\\typeorm\\cli.js"
   },
   "author": "kiel",
   "type": "module",
@@ -23,7 +23,6 @@
   },
   "devDependencies": {
     "dotenv": "^16.4.5",
-    "nodemon": "^3.1.0",
-    "typescript": "^5.4.5"
+    "nodemon": "^3.1.0"
   }
 }

@@ -15,7 +15,7 @@ export const AppDataSource = new DataSource({
     synchronize: false,
     logging: true,
     subscribers: [],
-    migrations: ['src\\database\\migrations\\*.ts'],
+    migrations: ['src\\database\\migrations\\*.js'],
     cli: {
         migrationsDir: 'src\\database\\migrations'
     }
