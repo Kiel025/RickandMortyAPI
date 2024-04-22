@@ -1,0 +1,29 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src\\app.js",
+    "typeorm": "node_modules\\.bin\\typeorm"
+  },
+  "author": "kiel",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "express": "^4.19.2",
+    "express-async-handler": "^1.2.0",
+    "express-validation": "^4.1.0",
+    "helmet": "^7.1.0",
+    "pg": "^8.11.5",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.4.5"
+  }
+}
