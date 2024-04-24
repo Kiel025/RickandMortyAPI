@@ -1,15 +1,25 @@
-import expressAsyncHandler from "express-async-handler";
-import { Character } from "../model/character.js";
-import { characterListService } from "../services/characterService.js";
+import { CharacterService } from "../services/characterService.js";
 
-export const characterList = expressAsyncHandler(async (req, res, next) => {
-    res.send(characterListService)
-})
+export default class CharacterController {
 
-export const characterDetail = expressAsyncHandler(async (req, res, next) => {
-    res.send(`Details from character id: ${req.params.id}`)
-})
+    async getAllCharacters(req, res) {
+        const result = await CharacterService.getAll()
 
-export const characterPost = expressAsyncHandler(async (req, res, next) => {
-    req.body()
-})
+        if (result instanceof Error) {
+            res.status(400).json(result.message)
+        }
+
+        return res.status(200).json(result)
+    }
+
+    async createCharacter(req, res) {
+        const { name, gender, species, type, status } = req.body
+        const result = await CharacterService.createCharacter({ name, gender, species, type, status })
+    
+        if (result instanceof Error) {
+            res.status(400).json(result.message)
+        }
+
+        res.status(200).json(result)
+    }
+}

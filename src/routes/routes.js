@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Router } from 'express'
 import { validate } from 'express-validation'
 import { characterValidations } from '../validation.js'
-import { characterDetail, characterList } from '../controller/characterController.js'
+import CharacterController from '../controller/characterController.js'
 const routes = Router()
 
 
@@ -17,12 +17,9 @@ routes.get('/about', (req, res) => {
 })
 
 // character
-routes.get('/character', characterList)
+routes.get('/character', new CharacterController().getAllCharacters)
+routes.post('/character', new CharacterController().createCharacter)
 
-routes.post('/character', validate(characterValidations), (req, res) => {
-    axios.get()
-})
-
-routes.get('/character/:id', characterDetail)
+routes.get('/character/:id', (req, res) => {})
 
 export default routes
