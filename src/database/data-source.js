@@ -1,6 +1,6 @@
 import { DataSource } from "typeorm"
 import { configDotenv } from 'dotenv'
-import { Character } from "./model/character.js"
+import { Character } from "../model/character.js"
 
 configDotenv.apply()
 
