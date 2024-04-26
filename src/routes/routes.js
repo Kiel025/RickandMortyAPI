@@ -19,7 +19,7 @@ routes.get('/about', (req, res) => {
 // character
 routes.get('/character', new CharacterController().getAllCharacters)
 routes.post('/character', new CharacterController().createCharacter)
-
-routes.get('/character/:id', (req, res) => {})
+routes.delete('/character/:id', new CharacterController().deleteCharacter)
+routes.put('/character/:id', new CharacterController().updateCharacter)
 
 export default routes
